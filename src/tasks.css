@@ -35,3 +35,6 @@
     margin: 0 3px;
     cursor:pointer;
 }
+.task_buttonGroup svg:hover{
+    background-color: #c7c7c7;
+}
