@@ -94,7 +94,7 @@ function Done(id){
         setTaskInput(e.target.value)
       }}/>
       {/* </Box> */}
-        <Button size="larg" variant="contained" style={{height:"56px",width:"120px"}} onClick={addnew}>Add task</Button>
+        <Button size="larg" variant="contained" style={{height:"56px",width:"145px"}} onClick={addnew}>Add task</Button>
       </CardActions>
       <DeletPopUp open={open} setOpen={ setOpen } delid={delid} delete_task={delete_task} setmessage={setmessage}/>
     </Card>
