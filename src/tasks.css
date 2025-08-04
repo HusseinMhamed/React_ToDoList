@@ -1,0 +1,37 @@
+.task_container{
+    background-color: #4d61d3;
+    border-radius:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    margin-top: 10px;
+    transition:.2s;
+}
+.task_container:hover{
+    background-color: #3a4aa5;
+    transform: scale(1.02,1.02);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+.task_title{
+    /* background-color: aliceblue; */
+    /* text-align: left; */
+    margin-bottom: 5px;
+}
+.task_body{
+    text-align: left;
+    max-width: 300px;
+    overflow: hidden;
+}
+.task_discription{
+    /* background-color: aqua; */
+}
+.task_buttonGroup svg{
+    font-size: 34px;
+    background-color: white;
+    border: 2px solid ;
+    border-radius: 50%;
+    padding: 2px;
+    margin: 0 3px;
+    cursor:pointer;
+}
