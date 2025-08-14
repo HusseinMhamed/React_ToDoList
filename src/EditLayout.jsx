@@ -4,14 +4,14 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import {useState} from 'react'
-
+import { useContext } from 'react';
 import TextField from '@mui/material/TextField';
-
-export default function Editlayout({layout , setlayout,editTask ,editedtask,seteditedtask,setmessage,setOpen}) {
-    // let [editedtask,seteditedtask]=useState({title:"",body:""})
+import { AlertContext } from './contexts/alertcontext';
+import { EditlayoutData } from './contexts/EditContext';
+export default function Editlayout() {
 /////////////////////////////////////////////////////////////////////////////////////////////
-
+const { editTask,setlayout,layout,seteditedtask,editedtask } = useContext(  EditlayoutData );
+const {setmessage,setOpen} = useContext(AlertContext)
 function editcurrentTask(){
     if(editedtask.title==""||editedtask.body==""){
         // alert("please fill all")
@@ -51,11 +51,9 @@ function handleoutclick(e){
         </Box>
         </Typography>
         <Typography sx={{ color: 'text.secondary', mb: 1.5, fontSize: 25  }}>Enter Description</Typography>
-        {/* <Typography variant="body2"> */}
              <Box sx={{ width: 500, maxWidth: '100%' }}>
         <TextField fullWidth label="Description" id="fullWidth" value={editedtask.body} onChange={(e)=>{seteditedtask({...editedtask,body:e.target.value})}} />
             </Box>
-        {/* </Typography> */}
       </CardContent>
       <CardActions style={{flexDirection:"row-reverse"}}>
         <Button size="small" variant="contained" style={{marginLeft:"10px"}} onClick={editcurrentTask} >Edit</Button>

@@ -2,13 +2,11 @@ import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import { Fragment } from 'react';
-export default function SimpleSnackbar({open,setOpen,message}) {
-//   const [open, setOpen] =useState(false);
-
-  const handleClick = () => {
-    setOpen(true);
-  };
+import {  ToDoList } from './contexts/ToDocontext';
+import { AlertContext } from './contexts/alertcontext';
+import { Fragment, useContext } from 'react';
+export default function SimpleSnackbar() {
+  const {message,open,setOpen} = useContext(AlertContext)
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {

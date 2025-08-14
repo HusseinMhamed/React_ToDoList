@@ -4,22 +4,20 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import {useState , Fragment} from 'react'
-export default function DeletPopUp({open,setOpen ,delete_task,delid,setmessage}) {
-//   const [open, setOpen] = useState(true);
-
-//   const handleClickOpen = () => {
-//     setOpen(true);
-//   };
-
+import { Fragment,useContext} from 'react'
+import { ToDoList } from './contexts/ToDocontext';
+import { AlertContext } from './contexts/alertcontext';
+export default function DeletPopUp() {
+  const {confirmopen,setconfirmOpen ,delete_task,delid}= useContext(ToDoList)
+  const{setmessage}=useContext(AlertContext)
   const handleClose = () => {
-    setOpen(false);
+    setconfirmOpen(false);
   };
 
   function agree(){
     setmessage("Task is Deleted Successfully")
     delete_task(delid)
-    setOpen(false);
+    setconfirmOpen(false);
   }
 
   return (
@@ -28,7 +26,7 @@ export default function DeletPopUp({open,setOpen ,delete_task,delid,setmessage})
         Open alert dialog
       </Button> */}
       <Dialog
-        open={open}
+        open={confirmopen}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
